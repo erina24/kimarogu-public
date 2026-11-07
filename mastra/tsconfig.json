@@ -1,0 +1,32 @@
+{
+  // TypeScript（.ts ファイル）をどう扱うかの設定
+  "compilerOptions": {
+    // ===== ここから3つは Mastra 公式の設定 =====
+    // どの年の JavaScript の書き方に合わせるか（ES2022 ＝ 新しめの書き方）
+    "target": "ES2022",
+    // import / export の書き方（ES2022 の書き方を使う）
+    "module": "ES2022",
+    // import したパッケージの探し方（Mastra などのツールに合わせた方式）
+    "moduleResolution": "bundler",
+    // Node.jsの型定義を読み込む設定
+    // // process.env（環境変数）や node:fs（ファイル操作）を
+    // TypeScriptが正しく認識できるようにする
+    "types": ["node"],
+
+    // ===== 安全のための設定 =====
+    // 型のチェックを厳しくする（間違いに早く気づける）
+    "strict": true,
+    // 古い形式のパッケージも import しやすくする
+    "esModuleInterop": true,
+    // インストールしたパッケージの中身の型チェックは省略する（時間短縮）
+    "skipLibCheck": true,
+
+    // ===== Node.js で .ts をそのまま動かすための設定 =====
+    // TypeScript から JavaScript のファイルを作らない（Node.js が .ts を直接読むため）
+    "noEmit": true,
+    // import のときに「.ts」まで書けるようにする（例：'./agents/profile-agent.ts'）
+    "allowImportingTsExtensions": true
+  },
+  // チェックの対象にするフォルダ（src の中だけ）
+  "include": ["src/**/*"]
+}

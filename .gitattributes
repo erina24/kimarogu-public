@@ -1,0 +1,5 @@
+# Windows と Mac で改行コードをそろえる
+* text=auto eol=lf
+*.png binary
+*.jpg binary
+*.pdf binary

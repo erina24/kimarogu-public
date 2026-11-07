@@ -1,0 +1,21 @@
+services:
+  db:
+    image: pgvector/pgvector:pg18
+    # ローカル検証用DB。別環境との同時起動時はコンテナ名・ポートの競合に注意
+    container_name: sec8-db
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      POSTGRES_DB: ${POSTGRES_DB}
+    ports:
+      - "5435:5432"
+    volumes:
+      - sec8_db_data:/var/lib/postgresql
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER} -d ${POSTGRES_DB}"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  sec8_db_data:

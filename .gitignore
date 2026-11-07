@@ -1,0 +1,30 @@
+# 秘密情報(絶対にコミットしない)
+.env
+.env.*
+!.env.example
+# 依存・ビルド
+node_modules/
+.next/
+dist/
+__pycache__/
+.venv/
+# OS
+.DS_Store
+Thumbs.db
+
+# チーム初期登録データ（Firebase UIDを含むため除外）
+/backend/seed-users.json
+/seed-users.json
+
+# ローカルの認証情報・実データ・生成物
+**/secrets/
+**/seed-users.json
+*.pem
+*.key
+*.p12
+*.pfx
+*.log
+*.pyc
+*.tsbuildinfo
+.mastra/
+coverage/

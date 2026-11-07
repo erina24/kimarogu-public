@@ -1,0 +1,21 @@
+@import "tailwindcss";
+
+@theme {
+  --color-base: #faf8f4;
+  --color-section-blue: #eaf5fb;
+  --color-section-peach: #fdf1e7;
+  --color-accent-blue: #def0f6;
+  --color-accent-peach: #feeadc;
+  --color-primary: #2e73a0;
+  --color-heading: #18547b;
+  --color-body: #2f4f66;
+}
+
+@theme inline {
+  --font-sans: var(--font-zen-maru-gothic);
+}
+
+body {
+  background-color: var(--color-base);
+  color: var(--color-body);
+}
